@@ -1,0 +1,9 @@
+亲爱的 {{user.nickname}},
+
+{{follower.nickname}} 关注了你. 点击下面的链接去看看 {{follower.nickname}}'s 页面吧:
+
+{{url_for('user', nickname = follower.nickname, _external = True)}}
+
+来自,
+
+The microblog admin

@@ -1,0 +1,16 @@
+<table>
+    <tr valign="top">
+        <td><a href={{url_for('user',nickname=post.author.nickname)}}><img src="{{post.author.avatar(50)}}"></a> {{post.author.nickname}} {{momentjs(post.timestamp).fromNow()}} said:{{post.body}}</td>
+    <th>
+
+    <td valign="right">
+    {% if post.author.id == g.user.id %}
+    <a href="{{url_for('delete_post', post_id = post.id)}}">Delete</a>
+    {% endif %}
+    </td>
+    </th>
+
+    </tr>
+
+
+</table>

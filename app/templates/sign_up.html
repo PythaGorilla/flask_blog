@@ -1,0 +1,33 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Sign Up</h1>
+<form action="" method="post" name="Sign_up">
+    {{form.hidden_tag()}}
+    <p>
+        Please enter your nickname ::<br>
+        {{form.nickname(size=40)}}<br>
+        {% for error in form.errors.nickname %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        Password::<br>
+        {{form.password(size=40)}}<br>
+        {% for error in form.errors.password %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        E-mail::<br>
+        {{form.email(size=40)}}<br>
+        {% for error in form.errors.email %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+   
+    </p>
+    <p>{{form.remember_me}} Remember Me</p>
+    <p><input type="submit" value="Sign Up"></p>
+</form>
+
+
+{% endblock %}
